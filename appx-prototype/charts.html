@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Top charts · AppX</title><link rel="stylesheet" href="assets/style.css"><script src="assets/app.js"></script></head><body data-nav="charts"><div id="phone"><header id="top"></header><div id="scrim"></div><div id="menu"></div><main id="view">
+<div id="c"></div><script>
+const t=Q.get('t')||'All';
+const r=A.map((a,i)=>i).filter(i=>t=='All'||(t=='Games')==(A[i].c=='Games')).sort((a,b)=>A[b].r-A[a].r);
+$('#c').innerHTML=bk()+head('Top charts','cup')+`<div class="tabs">${['All','Apps','Games'].map(x=>`<a class="${t==x?'on':''}" href="charts.html?t=${x}">${x}</a>`).join('')}</div><div style="display:grid;gap:16px">${r.map((id,n)=>`<div style="display:flex;gap:10px;align-items:center"><span class="num">${n+1}</span>${item(id)}</div>`).join('')}</div>`;
+</script>
+</main><nav id="nav"></nav></div><div id="toast"></div></body></html>

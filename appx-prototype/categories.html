@@ -1,0 +1,5 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Categories · AppX</title><link rel="stylesheet" href="assets/style.css"><script src="assets/app.js"></script></head><body data-nav="categories"><div id="phone"><header id="top"></header><div id="scrim"></div><div id="menu"></div><main id="view">
+<div id="c"></div><script>
+$('#c').innerHTML=bk()+head('Categories','apps')+`<div class="grid2">${CATS.map(c=>`<a class="pill" style="padding:22px 14px;flex-direction:column;gap:4px" href="search.html?c=${encodeURIComponent(c)}"><b>${c}</b><small>${A.filter(a=>a.c==c).length} apps</small></a>`).join('')}</div>`;
+</script>
+</main><nav id="nav"></nav></div><div id="toast"></div></body></html>

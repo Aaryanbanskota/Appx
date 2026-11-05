@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Downloads · AppX</title><link rel="stylesheet" href="assets/style.css"><script src="assets/app.js"></script></head><body data-nav="downloads"><div id="phone"><header id="top"></header><div id="scrim"></div><div id="menu"></div><main id="view">
+<div id="c"></div><script>
+let tab=Q.get('tab')||'Downloads';
+function pz(i){const D=S.g('dl',[]);D[i].z^=1;S.s('dl',D);R()}
+function cx(i){const D=S.g('dl',[]);D.splice(i,1);S.s('dl',D);R()}
+function up(id){S.s('upd',[...S.g('upd',[]),id]);toast('Updated '+A[id].n);R()}
+function T(t){tab=t;R()}
+function R(){const D=S.g('dl',[]),N=S.g('done',[]),pend=S.g('inst',[]).filter(i=>A[i].nv&&!S.g('upd',[]).includes(i));
+$('#c').innerHTML=bk()+head('Downloads','dl')+`<div class="tabs">${['Downloads','Update'].map(t=>`<button class="${tab==t?'on':''}" onclick="T('${t}')">${t}</button>`).join('')}</div>`+(tab=='Update'?`<div class="lab">UPDATES AVAILABLE</div>${pend.length?pend.map(i=>`<div class="row"><div class="th">${ai(A[i].i)}</div><div class="bd2"><b>${A[i].n}</b><small>${A[i].v} → ${A[i].nv}</small></div><button class="btn" style="margin:0 10px 0 0;padding:7px 12px" onclick="up(${i})">Update</button></div>`).join(''):'<small>All your apps are up to date.</small>'}`:`<div class="lab">CURRENTLY DOWNLOADING</div>${D.length?D.map((d,i)=>`<div class="row"><div class="th">${ai(A[d.a].i)}</div><div class="bd2" style="padding-right:46px"><b>${A[d.a].n}</b><small>${Math.round(A[d.a].s*d.p/100)} MB of ${A[d.a].s} MB · ${d.p}%</small><div class="pb"><i style="width:${d.p}%"></i></div></div><button style="position:absolute;top:6px;right:8px" onclick="cx(${i})" aria-label="Cancel">${ic('x',20)}</button><button style="position:absolute;bottom:8px;right:8px" onclick="pz(${i})" aria-label="Pause or resume">${ic(d.z?'play':'pause',18)}</button></div>`).join(''):'<small>Nothing downloading.</small>'}<div class="lab">RECENTLY DOWNLOADED</div>${N.slice(0,1).map(dlrow).join('')||'<small>No downloads yet.</small>'}<div class="lab">DOWNLOADED ALL</div>${N.map(dlrow).join('')}`)}
+window.onTick=R;R();
+</script>
+</main><nav id="nav"></nav></div><div id="toast"></div></body></html>

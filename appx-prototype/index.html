@@ -1,0 +1,5 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Home · AppX</title><link rel="stylesheet" href="assets/style.css"><script src="assets/app.js"></script></head><body data-nav="index"><div id="phone"><header id="top"></header><div id="scrim"></div><div id="menu"></div><main id="view">
+<div id="c"></div><script>
+$('#c').innerHTML=sbar()+`<div class="chips">${['GPL-3.0','MIT','Apache-2.0','MPL-2.0'].map(l=>`<a class="cp" href="search.html?l=${l}">${l}</a>`).join('')}</div>`+`<p class="lg"><i class="bd vb">✓</i> Verified by admin &nbsp; <i class="bd vb q">?</i> Not verified yet</p>`+feat('Featured app',7)+`<h2>New</h2><div class="row3">${[0,4,7].map(tile).join('')}</div><h2>Productivity apps</h2><div class="row3">${[2,5,6].map(tile).join('')}</div><h2>Recommended for you</h2><div class="row3">${[1,3,1].map(tile).join('')}</div>`;
+</script>
+</main><nav id="nav"></nav></div><div id="toast"></div></body></html>

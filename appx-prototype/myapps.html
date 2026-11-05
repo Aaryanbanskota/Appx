@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>My apps · AppX</title><link rel="stylesheet" href="assets/style.css"><script src="assets/app.js"></script></head><body data-nav="myapps"><div id="phone"><header id="top"></header><div id="scrim"></div><div id="menu"></div><main id="view">
+<div id="c"></div><script>
+function un(i){S.s('inst',S.g('inst',[]).filter(x=>x!=i));toast('Uninstalled '+A[i].n);R()}
+function R(){const I=S.g('inst',[]);$('#c').innerHTML=bk()+head('My apps','check')+(I.length?I.map(i=>`<div class="row"><div class="th">${ai(A[i].i)}</div><div class="bd2"><b>${A[i].n}</b><small>v${A[i].v} · ${A[i].l}</small></div><button class="btn" style="margin:0 6px 0 0;padding:7px 10px" onclick="toast('Opening ${A[i].n}')">Open</button><button class="red" style="padding-right:10px" onclick="un(${i})" aria-label="Uninstall">${ic('trash',22)}</button></div>`).join(''):`<p class="ctr" style="color:var(--mut)">No apps installed yet.<br><br><a class="btn" href="apps.html">Browse apps</a></p>`)}
+window.onTick=R;R();
+</script>
+</main><nav id="nav"></nav></div><div id="toast"></div></body></html>

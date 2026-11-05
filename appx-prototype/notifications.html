@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Notifications · AppX</title><link rel="stylesheet" href="assets/style.css"><script src="assets/app.js"></script></head><body data-nav="notifications"><div id="phone"><header id="top"></header><div id="scrim"></div><div id="menu"></div><main id="view">
+<div id="c"></div><script>
+let tab='Downloads';function T(t){tab=t;R()}
+function R(){const N=S.g('done',[]);$('#c').innerHTML=bk()+`<div class="ctr" style="width:fit-content;margin:0 auto;position:relative">${ic('bell',64)}</div><h1>Notifications</h1><div class="tabs" style="justify-content:space-between">${['Downloads','Update','Offer'].map(t=>`<button class="${tab==t?'on':''}" style="border-bottom:3px solid ${tab==t?'var(--ac)':'transparent'}" onclick="T('${t}')">${t}</button>`).join('')}<button onclick="toast('All marked as read')">Mark all read</button></div>${tab=='Downloads'&&N.length?`<div class="row"><div class="th" style="min-height:84px">${ai(A[N[0].a].i)}</div><div class="bd2"><b>Download completed</b><small>Your download of ${A[N[0].a].n} is complete and ready to open.</small><time>${N[0].t}</time></div></div>`:''}<div class="ctr" style="margin-top:36px"><div style="font-size:130px;filter:grayscale(1) brightness(5)">🤘</div><h2 style="font-size:26px">You’re all caught up</h2></div>`}
+R();
+</script>
+</main><nav id="nav"></nav></div><div id="toast"></div></body></html>

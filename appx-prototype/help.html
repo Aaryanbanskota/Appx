@@ -1,0 +1,5 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Help & Support · AppX</title><link rel="stylesheet" href="assets/style.css"><script src="assets/app.js"></script></head><body data-nav="help"><div id="phone"><header id="top"></header><div id="scrim"></div><div id="menu"></div><main id="view">
+<div id="c"></div><script>
+$('#c').innerHTML=bk()+head('Help & Support','help')+[['Is every app open source?','Yes. Each app shows its license and a link to its source code.'],['How do I update an app?','Open Downloads, switch to Update and tap Update next to the app.'],['Why did my download stop?','Check that you are online. If Wi-Fi only is on, connect to Wi-Fi.'],['How do I report an app?','Open the app page and use the Source link to reach its issue tracker.']].map(f=>`<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join('')+`<div class="ctr" style="margin-top:20px"><button class="pill" onclick="toast('Feedback form opens here')">Send feedback</button></div>`;
+</script>
+</main><nav id="nav"></nav></div><div id="toast"></div></body></html>

@@ -1,0 +1,10 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Search · AppX</title><link rel="stylesheet" href="assets/style.css"><script src="assets/app.js"></script></head><body data-nav="search"><div id="phone"><header id="top"></header><div id="scrim"></div><div id="menu"></div><main id="view">
+<div class="sb"><span id="si"></span><input id="q" placeholder="Search open-source apps" autocomplete="off"></div><div class="chips" id="ch"></div><div id="c"></div><script>
+$('#si').innerHTML=ic('search');const LS=['GPL-3.0','MIT','Apache-2.0','MPL-2.0'];let l=Q.get('l')||'',k=Q.get('c')||'';$('#q').value=Q.get('q')||'';
+function R(){const q=$('#q').value.trim().toLowerCase();
+$('#ch').innerHTML=[...CATS,...LS].map(x=>`<button class="cp ${x==l||x==k?'on':''}" data-v="${x}">${x}</button>`).join('');
+const r=A.map((a,i)=>i).filter(i=>(A[i].n+A[i].c).toLowerCase().includes(q)&&(!k||A[i].c==k)&&(!l||A[i].l==l));
+$('#c').innerHTML=r.length?`<h2>${q||k||l?'Results':'Explore open-source apps'}</h2><div style="display:grid;gap:14px">${r.map(item).join('')}</div>`:`<p class="ctr" style="margin-top:50px;color:var(--mut)">No apps match. Try another name or clear a filter.</p>`}
+$('#q').oninput=R;$('#ch').onclick=e=>{const v=e.target.dataset.v;if(!v)return;if(LS.includes(v))l=l==v?'':v;else k=k==v?'':v;R()};R();
+</script>
+</main><nav id="nav"></nav></div><div id="toast"></div></body></html>

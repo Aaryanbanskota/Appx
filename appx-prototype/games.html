@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Games · AppX</title><link rel="stylesheet" href="assets/style.css"><script src="assets/app.js"></script></head><body data-nav="games"><div id="phone"><header id="top"></header><div id="scrim"></div><div id="menu"></div><main id="view">
+<div id="c"></div><script>
+const G=A.map((a,i)=>i).filter(i=>A[i].c=='Games');
+const rc=id=>`<div class="rc"><a class="bn" href="app.html?id=${id}" style="display:grid;background:linear-gradient(135deg,hsl(${id*47+150},45%,32%),hsl(${id*47+195},40%,14%))"><i class="bd ${A[id].ok?'':'q'}">${A[id].ok?'✓':'?'}</i><span class="rt"><span>★</span> ${A[id].r}</span>${ai(A[id].i)}</a><div class="in">${item(id)}<button class="btn" onclick="install(${id})">Install</button></div></div>`;
+$('#c').innerHTML=sbar()+feat('Featured Game',0)+`<h2 style="display:flex;justify-content:space-between">Top Games Charts<a href="charts.html?t=Games">${ic('arr')}</a></h2><div class="grid2">${G.concat(G).map(item).join('')}</div><h2>Recommended for you</h2><div class="scroll">${G.map(rc).join('')}</div>`;
+</script>
+</main><nav id="nav"></nav></div><div id="toast"></div></body></html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>App details · AppX</title><link rel="stylesheet" href="assets/style.css"><script src="assets/app.js"></script></head><body data-nav="app"><div id="phone"><header id="top"></header><div id="scrim"></div><div id="menu"></div><main id="view">
+<div id="c"></div><script>
+const id=+Q.get('id')||0,a=A[id],stars=n=>'★'.repeat(n)+'☆'.repeat(5-n);document.title=a.n+' · AppX';
+const RV=[['Sam',5,'2 weeks ago','Light and fast. I like that I can read the source.'],['Ria',4,'1 month ago','Works great. I wish it had more themes.'],['Dev',5,'2 months ago','Does exactly what it says. No ads.']];
+let rs=0;
+function wl(){const W=S.g('wish',[]);S.s('wish',W.includes(id)?W.filter(x=>x!=id):[...W,id]);R()}
+function btn(){const I=S.g('inst',[]).includes(id),D=S.g('dl',[]).find(d=>d.a==id);return`<button id="ib" class="btn" style="font-size:18px;padding:13px 22px;margin:0" onclick="${I?`toast('Opening ${a.n}')`:`install(${id})`}">${I?'OPEN':D?'DOWNLOADING '+D.p+'%':'INSTALL '+ic('dl',20)}</button>`}
+function pick(n){rs=n;wf()}
+function wf(){$('#wr').innerHTML=`<b>Rate this app</b><div class="stars big" style="margin:6px 0 8px">${[1,2,3,4,5].map(n=>`<button onclick="pick(${n})" aria-label="${n} stars">${n<=rs?'★':'☆'}</button>`).join('')}</div><input id="rt" class="rin" placeholder="Share your experience (optional)"><button class="full" style="margin-top:10px" onclick="post()">Post review</button>`}
+function post(){if(!rs)return toast('Tap a star to rate first');const L=S.g('rev'+id,[]);L.unshift(['You',rs,'Just now',$('#rt').value.trim()||'No comment']);S.s('rev'+id,L);rs=0;toast('Review posted');R()}
+function R(){const W=S.g('wish',[]).includes(id),vt=a.vt,vc=!vt?'q':vt[0]?'warn':'ok';
+const p5=Math.round((a.r-3)*45),rest=100-p5,p4=Math.round(rest*.5),p3=Math.round(rest*.25),p2=Math.round(rest*.15),d=[p5,p4,p3,p2,rest-p4-p3-p2];
+const rv=[...S.g('rev'+id,[]),...RV];
+$('#c').innerHTML=bk()+`<div class="hero"></div><div class="dh"><div class="ic">${ai(a.i)}</div><div><h1>${a.n}</h1><small>Dev Lab</small></div></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap"><span class="os">${ic('code',16)} Open source · ${a.l}</span><span class="os ${a.ok?'':'q'}">${a.ok?ic('check',16)+' Verified by admin':'? Not verified yet'}</span></div>
+<div style="display:flex;align-items:center;gap:18px;margin-top:16px">${btn()}<b>${a.s} MB</b></div>
+<div class="acts"><button onclick="toast('Opens the source repository')">${ic('code',18)} Source</button><button onclick="wl()" style="${W?'color:var(--red)':''}">${ic('heart',18)} ${W?'Saved':'Wishlist'}</button><button onclick="toast('Link copied')">${ic('share',18)} Share</button></div>
+<div class="stats"><div><b>★ ${a.r}</b>200+ reviews</div><div><b>800+</b>users</div><div><b>1000+</b>downloads</div><div><b>${a.c.split(' ')[0]}</b>type</div></div>
+<h2 style="margin-top:6px">Screenshots</h2><div class="shots"><div>${ai(a.i)}</div><div>${ai(a.i)}</div><div>${ai(a.i)}</div></div>
+<h2>About this app</h2><p style="line-height:1.5;color:var(--mut)">${a.n} is a free, open-source ${a.c.toLowerCase()} app. This is sample text for the prototype.</p>
+<h2>Security and trust</h2><div class="sec">
+<button class="sc ${vc}" onclick="toast('Opens the VirusTotal report')">${ic('scan',26)}<b>VirusTotal scan</b><small>${vt?vt[0]+' of '+vt[1]+' engines flagged':'Not scanned yet'}</small></button>
+<div class="sc ${a.ok?'ok':'q'}">${ic(a.ok?'check':'help',26)}<b>${a.ok?'Admin verified':'Not verified'}</b><small>${a.ok?'Checked by an AppX admin':'Waiting for admin review'}</small></div>
+<div class="sc ok">${ic('code',26)}<b>Open source</b><small>${a.l} license</small></div>
+<div class="sc ${a.ok?'ok':'q'}">${ic('lock',26)}<b>App signature</b><small>${a.ok?'Matches the developer':'Not checked yet'}</small></div></div>
+<small style="display:block;margin-top:8px">Scan results are sample data in this prototype.</small>
+<h2>Permissions</h2><div style="display:grid;gap:10px">${a.pm.map(k=>{const p=PM[k];return`<div class="pm"><div class="pi">${ic(p[0],22)}</div><div><b>${p[1]}</b><small>${p[2]}</small></div><span class="lv ${p[3]=='Sensitive'?'w':''}">${p[3]}</span></div>`}).join('')}</div>
+<h2>What’s new</h2><p style="color:var(--mut)">Version ${a.nv||a.v}: bug fixes and faster start-up.</p>
+<h2>Ratings and reviews</h2><div class="rs"><div class="n">${a.r}<div class="stars" style="font-size:13px;margin-top:6px">${stars(Math.round(a.r))}</div><small>200+ reviews</small></div><div class="bars">${[5,4,3,2,1].map((s,i)=>`<div>${s}<i><u style="width:${d[i]}%"></u></i></div>`).join('')}</div></div>
+<div class="wr" id="wr"></div>
+${rv.map(r=>`<div class="rv"><div class="h"><div class="av2" style="background:hsl(${r[0].charCodeAt(0)*37%360},60%,70%)">${r[0][0]}</div><div><b>${r[0]}</b><small>${r[2]}</small></div><span class="stars" style="margin-left:auto;font-size:13px">${stars(r[1])}</span></div><p>${r[3].replace(/</g,'&lt;')}</p></div>`).join('')}
+<h2>Similar apps</h2><div class="row3">${A.map((x,i)=>i).filter(i=>i!=id&&A[i].c==a.c).slice(0,3).map(tile).join('')}</div>`;wf()}
+window.onTick=()=>{const b=$('#ib');if(b)b.outerHTML=btn()};R();
+</script>
+</main><nav id="nav"></nav></div><div id="toast"></div></body></html>

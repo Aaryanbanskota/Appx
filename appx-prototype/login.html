@@ -1,0 +1,11 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Sign in · AppX</title><link rel="stylesheet" href="assets/style.css"><script src="assets/app.js"></script></head><body data-nav="login"><div id="phone"><header id="top"></header><div id="scrim"></div><div id="menu"></div><main id="view">
+<a class="bk" href="index.html"><span id="bi"></span> Back</a><div class="ctr" id="li"></div><h1 id="ht">Sign in</h1>
+<div class="fm"><input id="em" type="email" placeholder="Email" autocomplete="email"><input id="pw" type="password" placeholder="Password" autocomplete="current-password"></div>
+<button class="full" id="go">Sign in</button><p class="ctr" style="margin-top:18px"><button id="sw" style="color:var(--ac);font-weight:600">New here? Create an account</button></p>
+<p class="ctr" style="margin-top:14px"><a href="index.html" style="color:var(--mut)">Continue as guest</a></p>
+<script>
+$('#bi').innerHTML=ic('back',28);$('#li').innerHTML=ic('user',72);let up=0;
+$('#sw').onclick=()=>{up^=1;$('#ht').textContent=up?'Create account':'Sign in';$('#go').textContent=up?'Create account':'Sign in';$('#sw').textContent=up?'Have an account? Sign in':'New here? Create an account'};
+$('#go').onclick=()=>{const e=$('#em').value.trim();if(!e.includes('@')||$('#pw').value.length<4)return toast('Enter a valid email and a password of 4+ characters');S.s('user',{name:e.split('@')[0],email:e});location.href='profile.html'};
+</script>
+</main><nav id="nav"></nav></div><div id="toast"></div></body></html>

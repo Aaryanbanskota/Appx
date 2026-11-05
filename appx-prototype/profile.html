@@ -1,0 +1,8 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Profile · AppX</title><link rel="stylesheet" href="assets/style.css"><script src="assets/app.js"></script></head><body data-nav="profile"><div id="phone"><header id="top"></header><div id="scrim"></div><div id="menu"></div><main id="view">
+<div id="c"></div><script>
+function out(){S.s('user',null);toast('You are logged out');setTimeout(()=>location.href='login.html',700)}
+function R(){const u=S.g('user',null);if(!u){$('#c').innerHTML=bk()+head('Welcome','user')+`<p class="ctr" style="color:var(--mut)">Sign in to sync your wishlist.</p><br><a class="full" href="login.html">Sign in</a>`;return}
+$('#c').innerHTML=bk()+`<h1>Hey, ${u.name}!</h1><div class="ctr"><span class="pill">${ic('user')} ${u.email}</span></div><h2 style="font-size:18px;margin-top:28px">Recent Download</h2>${S.g('done',[]).slice(0,2).map(dlrow).join('')}<div class="ctr"><a class="pill" style="margin:6px 0 16px" href="downloads.html">See More ${ic('arr',20)}</a></div>${li('check','My apps','','myapps.html')}${li('gear','Setting','','settings.html')}${li('shield','Privacy & Security','','privacy.html')}${li('help','Help & Support','','help.html')}<div class="ctr" style="margin-top:20px"><button class="pill" style="padding:14px 28px" onclick="out()">Log out <span class="red">${ic('out')}</span></button></div>`}
+R();
+</script>
+</main><nav id="nav"></nav></div><div id="toast"></div></body></html>

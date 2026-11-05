@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Appearance · AppX</title><link rel="stylesheet" href="assets/style.css"><script src="assets/app.js"></script></head><body data-nav="settings"><div id="phone"><header id="top"></header><div id="scrim"></div><div id="menu"></div><main id="view">
+<div id="c"></div><script>
+function set(v){S.s('theme',v);if(v=='system')delete document.documentElement.dataset.theme;else document.documentElement.dataset.theme=v;R()}
+function R(){const t=S.g('theme','system');$('#c').innerHTML=bk()+head('Appearance','pal')+[['system','System default','Match your device'],['dark','Dark','Easier on the eyes at night'],['light','Light','Best in bright places']].map(o=>`<button class="li" onclick="set('${o[0]}')"><div><b>${o[1]}</b><small>${o[2]}</small></div><span class="go" style="color:var(--ac)">${t==o[0]?ic('check',22):''}</span></button>`).join('')}
+R();
+</script>
+</main><nav id="nav"></nav></div><div id="toast"></div></body></html>
